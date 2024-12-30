@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="shortcut icon" type="x-icon" href="{% static 'pic/h.png' %}">
+    <title>Barangay Payroll System</title>
+    <link rel="stylesheet" href="{% static 'announce.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Barangay Payroll System</div>
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'announcement' %}">Announcement</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+    </nav>
+    <div class="announcement-wrapper">
+        <div class="announcement-container">
+            <h1 class="announcement-title">{{ announcement.title }}</h1>
+            <div class="image-container" id="image-container">
+                <img src="{{ announcement.image1.url }}" alt="Announcement Image" class="animated-image">
+                <img src="{{ announcement.image2.url }}" alt="Announcement Image" class="animated-image">
+                <img src="{{ announcement.image3.url }}" alt="Announcement Image" class="animated-image">
+            </div>
+            <p class="announcement-text">
+                {{ announcement.description }}
+            </p>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'download' %}">Download</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'announcement' %}">Announcement</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="bottom">
+        <p>&copy; 2024 San Jose Rodriguez Rizal. All rights reserved</p>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const imageContainer = document.getElementById('image-container');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                imageContainer.style.marginTop = '150px'; // Adjust the value as needed
+            } else {
+                imageContainer.style.marginTop = '0'; // Reset the margin
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* General styling */
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('pic/bg.png'); /* Replace with the path to your image */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%;
+    height: 100%;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f57811bb;
+    padding: 10px 20px;
+}
+.navbar .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin-left: 20px;
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Container that holds both the gif and text */
+.announcement-container {
+    width: 60%; /* Responsive width */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text */
+    justify-content: center;
+    flex-direction: column;
+    margin: 100px auto; /* Center horizontally */
+}
+.announcement-title {
+    color: #f7f6f6; /* Title color */
+    margin-bottom: 20px; /* Space below title */
+}
+.image-container {
+    overflow: hidden; /* Hide overflow for animation */
+}
+.animated-image {
+    width: 75%; /* Responsive image */
+    max-width: 75%; /* Ensure it doesn't exceed container width */
+     /* Animation effect */
+    margin: 20px;
+}
+@keyframes zoom {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Zoom in effect */
+    }
+}
+.announcement-text {
+    margin-top: 20px; /* Space above text */
+    color: #fcf8f8; /* Text color */
+    font-size: 1.2em; /* Text size */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #201c1cde;
+    color: rgb(252, 252, 252);
+    padding: 10px;
+    text-align: center;
+    margin-top: 10%;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 10px;
+    min-width: 200px;
+}
+.footer h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-left: 35px;
+}
+.footer ul {
+    list-style: none;
+}
+.footer ul li {
+    margin-bottom: 10px;
+}
+.footer ul li a {
+    color: #e8ebe6;
+    text-decoration: none;
+    font-size: 16px;
+}
+.footer ul li a:hover {
+    text-decoration: underline;
+    color: #f3600a;
+}
+
+/* Smaller screens (tablets, smaller laptops) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 5px; /* Positioning to the right */
+        width: auto; /* Adjust width as needed */
+        width: 95%; 
+        background-color: #f9a825; /* Light orange background */
+        border-radius: 5px ; 
+    }
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+        border-top: 1px solid white;
+    }
+    .nav-links li:first-child {
+        border-top: none;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .announcement-container {
+        width: 80%;
+        margin: 50px auto; /* Adjust horizontal centering */
+    }
+    .announcement-title {
+        font-size: 1.8em; /* Adjust font size */
+    }
+    .announcement-text {
+        font-size: 1em; /* Adjust font size */
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .footer h3 {
+        font-size: 18px;
+    }
+    .footer ul li a {
+        font-size: 14px;
+    }
+}
+
+/* Very small screens (mobile) */
+@media (max-width: 480px) {
+    .announcement-container {
+        width: 90%;
+        padding: 15px;
+    }
+    .announcement-title {
+        font-size: 1.5em; /* Smaller title on mobile */
+    }
+    .announcement-text {
+        font-size: 1em; /* Smaller text size on mobile */
+    }
+    .footer h3 {
+        font-size: 16px;
+    }
+    .footer ul li a {
+        font-size: 14px;
+    }
+    .footer-container {
+        text-align: center;
+    }
+}
+.bottom {
+    background: #f57811bb;
+    text-align: center;
+    padding: 10px 0;
+}
+.bottom p {
+    color: #f5f5f5;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+    text-align: center;
+} 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="pic/h.png">
+    <title>Barangay Payroll System</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Barangay Payroll System</div>
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="announce.html">Announcement</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <!-- home img and text-->
+    <div class="container">
+        <div class="image-content">
+            <img src="pic/h.gif" alt="Responsive" id="gif">
+        </div>
+        <div class="text-content">
+            <h1>Welcome everyone to</h1>
+            <h2>Barangay Website!</h2>
+            <p>For the employee of the Barangay please Login to download the Mobile application.</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="download.html">Download</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="announce.html">Announcement</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="bottom">
+        <p>&copy; 2024 San Jose Rodriguez Rizal. All rights reserved</p>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const gifContainer = document.querySelector('.image-content');
+        const navLinks = document.querySelector('.nav-links');
+        const gif = document.getElementById('gif');
+
+        hamburger.addEventListener('click', function() {
+            gifContainer.classList.toggle('hidden');
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                gifContainer.style.marginTop = '200px'; // Adjust the value as needed
+            } else {
+                gifContainer.style.marginTop = '0'; // Reset the margin
+            }
+        });
+    </script>
+</body>
+</html>

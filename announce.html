@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="pic/h.png">
+    <title>Barangay Payroll System</title>
+    <link rel="stylesheet" href="announce.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Barangay Payroll System</div>
+        <div class="hamburger">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="announce.html">Announcement</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="announcement-wrapper">
+        <div class="announcement-container">
+            <h1 class="announcement-title">Exciting Announcements!</h1>
+            <div class="image-container" id="image-container"></div>
+            <p class="announcement-text" id="announcement-text">
+                Loading announcements, please wait...
+            </p>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer content omitted for brevity -->
+        </div>
+    </footer>
+    <div class="bottom">
+        <p>&copy; 2024 San Jose Rodriguez Rizal. All rights reserved</p>
+    </div>
+
+    <script>
+        const imageContainer = document.getElementById('image-container');
+        const announcementText = document.getElementById('announcement-text');
+
+        // Fetch announcements from the API
+        fetch('http://127.0.0.1:8000/api/announcements/', {
+            headers: {
+                'Authorization': 'Token f3f49535b5ff158b9820ecbea26e3e249185d690',
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Clear the loading text
+            announcementText.textContent = '';
+
+            // Loop through announcements and update the DOM
+            data.forEach(announcement => {
+                // Create an image element
+                const img = document.createElement('img');
+                img.src = announcement.announcement_image;
+                img.alt = announcement.title;
+                img.className = 'animated-image';
+                imageContainer.appendChild(img);
+
+                // Append announcement details
+                const announcementParagraph = document.createElement('p');
+                announcementParagraph.textContent = `${announcement.title}: ${announcement.description}`;
+                announcementText.appendChild(announcementParagraph);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching announcements:', error);
+            announcementText.textContent = 'Failed to load announcements.';
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            imageContainer.style.marginTop = navLinks.classList.contains('active') ? '150px' : '0';
+        });
+    </script>
+</body>
+</html>

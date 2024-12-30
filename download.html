@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="download.css">
+    <link rel="shortcut icon" type="x-icon" href="pic/h.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Barangay Payroll System</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Barangay Payroll System</div>
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="announce.html">Announcement</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="gif-container">
+            <img src="pic/d.gif" alt="Animated GIF" class="responsive-gif">
+        </div>
+       
+    <!-- download con -->
+    <section class="download-section">
+        <div class="app-card">
+            <h2>Click me!</h2>
+            <p>Platform: Mobile Application</p>
+            <a href="path-to-your-android-app.apk" download class="download-btn">Download for Android</a>
+        </div>
+    </div>
+    <div class="text-con">
+        <p>What is the Barangay Mobile application?<br>
+            The Barangay Mobile Application is dedicated for the employee of the barangay.
+             The mobile app can help the employee to monitor their time in and time out,
+             and also their attendance. Through the app they can receive notification if they 
+             can claim their salary. Lastly, the employee can send a request to Leave through the mobile app.</p>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Column 1: Company Information -->
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="download.html">Download</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="announce.html">Announcement</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 2: Contact Information -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <!-- Column 3: Social Media Links -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="bottom">
+        <p>&copy; 2024 San Jose Rodriguez Rizal. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const container = document.querySelector('.container');
+        const logoutButton = document.getElementById('logout-btn');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                container.style.marginTop = '200px'; // Adjust this value as needed
+            } else {
+                container.style.marginTop = '0'; // Reset to original
+            }
+        });
+
+        logoutButton.addEventListener('click', () => {
+            // Show logout message
+            alert('You have been logged out successfully!');
+            // Simulate logout action
+            // Here you can also clear session storage or cookies if needed
+            window.location.href = 'home.html'; // Redirect to home page
+        });
+    </script>
+</body>
+</html>

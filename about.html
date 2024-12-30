@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="pic/h.png">
+    <title>Barangay Payroll System</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Barangay Payroll System</div>
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="announce.html">Announcement</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <script src="script.js"></script>
+
+ <!--about Us-->
+ <div class="text-container">
+    <h1>About Us</h1>
+    <div class="text">
+    <p>The Barangay Payroll Management System Website was created for the employee of the Barangay.
+        Through the online website the employee. and other people can access the other things can 
+        offer of the Barangay Payroll Management System. The website is specifically made for the
+         employee that are working under the Barangay. Through the website the employee can download t
+         he mobile application that offer other things for the employees. For the other people accessing or
+          visiting the website, the website can offer all the announcement about the Barangay.</p>
+    </div>
+    </div>
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Column 1: Company Information -->
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="announce.html">Announcement</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 2: Contact Information -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <!-- Column 3: Social Media Links -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+
+</body>
+
+
+<Script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const textContainer = document.querySelector('.text-container');
+    
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        if (navLinks.classList.contains('active')) {
+                textContainer.style.marginTop = '200px'; // Adjust this value as needed
+            } else {
+                textContainer.style.marginTop = '0'; // Reset to original
+            }
+    });
+    </Script>
+
+
+<div class="bottom">
+    <p>&copy; 2024 San Jose Rodriguez Rizal. all right reserved</p>
+    
+</div>
+</html>
